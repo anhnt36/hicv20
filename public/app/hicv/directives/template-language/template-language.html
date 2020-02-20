@@ -1,0 +1,60 @@
+<div id="LanguageSection" class="resume-section LanguageSection" change-height>
+<div class="resume-section-container clickable editable" ng-click="$root.clickInputTitleSection($event)" click-off
+	     on-click-off="$root.clickOffInputTitleSection($event)">
+		<div class="resume-section-text-container">
+			<div class="editable-field-wrapper">
+				<textarea msd-elastic
+						  class="editable-field resume-first-border resume-section-text resume-heading-font resume-first-color"
+						  placeholder="{{'language' | translate}}"
+						  ng-model="$ctrl.data.name"
+						  autocomplete="off"
+						  rows="1"
+						  style="overflow: hidden; word-wrap: break-word; height: 39px;" capitalize-first>
+				</textarea>
+			</div>
+		</div>
+	</div>
+	<div dnd-list="$ctrl.data.items"
+		 dnd-allowed-types="[$ctrl.data.key]"
+	     dnd-external-sources="true"
+	     dnd-dragover="$ctrl.dragoverCallback(event, index, external, type)"
+	     dnd-drop="$ctrl.dropCallback(event, index, item, external, type)" class="resume-section">
+		<div class="dndPlaceholder" ng-style="$ctrl.styleDndPlaceholder"></div>
+		<div ng-repeat="item in $ctrl.data.items"
+		     dnd-draggable="item"
+			 dnd-type="item.key"
+		     dnd-effect-allowed="copyMove"
+		     dnd-moved="$ctrl.data.items.splice($index, 1)"  class="resume-item-holder line-item editable clickable" id="sections-2-items-0"
+			 draggable="false" ng-click="$ctrl.clickSection($event, $index)" click-off
+			 on-click-off="$ctrl.clickSectionOff($event, $index)">
+
+			<div>
+				<template-popover ng-if="$ctrl.displayPopover[$index]" field-check="$ctrl.fieldCheck" data="item"
+				                  template-data="$ctrl.data"
+				                  icon-add="true" icon-time="true" icon-cog="true" icon-trash="true" key="$index"></template-popover>
+				<div class="item-object language-item ">
+					<div class="inner">
+						<div class="language-item-content">
+							<div class="editable-field-wrapper">
+								<textarea msd-elastic
+										  class="editable-field language-item-name resume-first-color"
+										  placeholder="{{'language' | translate}}"
+										  ng-model="item.language"
+										  autocomplete="off"
+										  rows="1"
+										  style="overflow: hidden; word-wrap: break-word; height: 20px;" capitalize-first>
+								</textarea>
+							</div>
+							<div class="language-item-level-text" ng-bind-html="item.proficiency.value"
+							     ng-if="item.proficiency.display">
+							</div>
+						</div>
+						<div class="language-item-slider lower-lines" ng-if="item.level.display">
+							<range-slider type="dot" data="item.level" experience="item.proficiency"></range-slider>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

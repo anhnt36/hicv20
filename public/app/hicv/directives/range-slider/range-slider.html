@@ -1,0 +1,24 @@
+<div class="slider-component slider-component-dots" ng-if="$ctrl.type == 'dot'">
+	<div class="dot-wrap " ng-mouseleave="$ctrl.level = $ctrl.data.value" ng-mousedown="$ctrl.data.value = $ctrl.level" ng-mouseenter="$ctrl.level = 1">
+		<div class="slider-component-dot {{$ctrl.level >= 1 ? 'resume-second-background' : 'resume-first-background'}}"
+		     style="cursor:pointer"></div>
+	</div>
+	<div class="dot-wrap " ng-mouseleave="$ctrl.level = $ctrl.data.value" ng-mousedown="$ctrl.data.value = $ctrl.level" ng-mouseenter="$ctrl.level = 2">
+		<div class="slider-component-dot {{$ctrl.level >= 2 ? 'resume-second-background' : 'resume-first-background'}}"
+		     style="cursor:pointer"></div>
+	</div>
+	<div class="dot-wrap " ng-mouseleave="$ctrl.level = $ctrl.data.value" ng-mousedown="$ctrl.data.value = $ctrl.level" ng-mouseenter="$ctrl.level = 3">
+		<div class="slider-component-dot {{$ctrl.level >= 3 ? 'resume-second-background' : 'resume-first-background'}}"
+		     style="cursor:pointer"></div>
+	</div>
+	<div class="dot-wrap " ng-mouseleave="$ctrl.level = $ctrl.data.value" ng-mousedown="$ctrl.data.value = $ctrl.level" ng-mouseenter="$ctrl.level = 4">
+		<div class="slider-component-dot {{$ctrl.level >= 4 ? 'resume-second-background' : 'resume-first-background'}}"
+		     style="cursor:pointer"></div>
+	</div>
+
+	<div class="dot-wrap " ng-mouseleave="$ctrl.level = $ctrl.data.value" ng-mousedown="$ctrl.data.value = $ctrl.level" ng-mouseenter="$ctrl.level = 5">
+		<div class="slider-component-dot {{$ctrl.level >= 5 ? 'resume-second-background' : 'resume-first-background'}}"
+		     style="cursor:pointer"></div>
+	</div>
+
+</div>

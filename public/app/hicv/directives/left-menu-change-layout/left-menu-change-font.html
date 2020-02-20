@@ -1,0 +1,41 @@
+<div class="toolbox-inner toolbox-specific section-left-menu"  click-off on-click-off="$ctrl.hide()">
+    <div style="position: relative; overflow: hidden; width: 100%; height: 100%;">
+        <div style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; overflow: scroll; margin-right: -15px; margin-bottom: -15px;">
+            <div class="fixed-container">
+                <div class="toolbox-heading-container text-center"><a ng-click="$ctrl.hide()" class="back-button"> <span
+                        class="icon icon-arrowleft-1"></span><span class="back-button-text">Back to Home</span></a>
+                </div>
+            </div>
+            <hr>
+            <div>
+                <div class="fixed-container fonts-state">
+                    <div class="layout-box-title">Main font</div>
+                    <div class="fonts-container">
+                        <div>
+                            <div ng-repeat="(f, font) in $ctrl.fonts"
+                                    class="animated zoomIn delay-1 font {{$ctrl.selected(f) ? 'selected' : ''}}">
+                                <a ng-click="$ctrl.setFont(f)"
+                                    style="font-family: &quot;{{font.family}}&quot;;">{{font.title}}</a>
+                                <i ng-if="$ctrl.selected(f)" class="icon icon-02-free-check-mark"></i>
+                                <i
+                                    ng-if="font.locked"
+                                    class="icon icon-lock1-v2-1 lock-icon color-state-locked-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </div>
+        <div style="position: absolute; height: 6px; transition: opacity 200ms; opacity: 0; right: 2px; bottom: 2px; left: 2px; border-radius: 3px;">
+            <div style="position: relative; display: block; height: 100%; cursor: pointer; border-radius: inherit; background-color: rgba(0, 0, 0, 0.2); width: 0px;">
+
+            </div>
+        </div>
+        <div style="position: absolute; width: 6px; transition: opacity 200ms; opacity: 0; right: 2px; bottom: 2px; top: 2px; border-radius: 3px;">
+            <div style="position: relative; display: block; width: 100%; z-index: 3; cursor: pointer; border-radius: inherit; background-color: rgba(0, 0, 0, 0.2); height: 126px; transform: translateY(0px);">
+
+            </div>
+        </div>
+    </div>
+</div>

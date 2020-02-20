@@ -1,0 +1,49 @@
+<div id="PassionSection-1" class="resume-section PassionSection" >
+    <div class="resume-section-container resume-section-selected clickable editable">
+        <div class="resume-section-text-container">
+            <div class="editable-field-wrapper">
+                <textarea
+                        msd-elastic ng-model="$ctrl.data.name"
+                        class="editable-field resume-first-border resume-section-text resume-heading-font resume-first-color"
+                        placeholder="{{'passion' | translate}}" autocomplete="off" rows="1"
+                        style="overflow: hidden; word-wrap: break-word; height: 39px;">
+                </textarea>
+            </div>
+        </div>
+    </div>
+    <div class="moveable-items">
+        <div ng-repeat="item in $ctrl.data.items"
+             class="resume-item-holder line-item editable clickable"
+             id="sections-7-items-0" draggable="false">
+            <div class="item-object passion-item">
+                <div class="inner">
+                    <div class="passion-item-container editable">
+                        <div class="passion-item-content">
+                            <div class="passion-item-icon">
+                                <div class=""><i class="{{::item.icon.value}} resume-second-color"></i></div>
+                            </div>
+                            <div class="editable-field-wrapper">
+                                    <textarea
+                                            msd-elastic ng-model="item.name"
+                                            class="editable-field passion-item-title resume-first-color "
+                                            placeholder="{{'yourPassion' | translate}}" autocomplete="off" rows="1"
+                                            style="overflow: hidden; word-wrap: break-word; height: 20px;">
+                                    </textarea>
+                            </div>
+                        </div>
+                        <div class="padded-item-content">
+                            <div class="editable-field-wrapper">
+                                    <textarea
+                                            msd-elastic ng-model="item.description.value"
+                                            class="editable-field passion-item-description"
+                                            placeholder="{{'description' | translate}}"
+                                            maxlength="1000" autocomplete="off" rows="1"
+                                            style="overflow: hidden; word-wrap: break-word; height: 22px;" capitalize-first></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

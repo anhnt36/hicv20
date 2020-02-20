@@ -1,0 +1,69 @@
+<div class="modal cv-modal-login" style="display: block;">
+	<div id="" class="modal-dialog modal-lg layout-popup" style="width: 600px;">
+		<div class="modal-content">
+			<button style="margin-top: 10px;margin-right: 10px;" class="close animated-hover" type="button" ng-click="$close()"><i class="icon icon-close-1 rotate"></i></button>
+			<div>
+				<h1 class="text-center cv-title-login">Đăng nhập HiCV</h1>
+			</div>
+			<ul class="nav nav-tabs" role="tablist">
+				<li role="presentation" class="active"><a style="color: grey" href="edit/#social" aria-controls="home" role="tab" data-toggle="tab">Tài Khoản Mạng Xã Hội</a></li>
+				<li role="presentation"><a style="color: grey" href="edit/#acc" aria-controls="profile" role="tab" data-toggle="tab">Tài Khoản HICV</a></li>
+			</ul>
+
+			<!-- Tab panes -->
+			<div class="tab-content">
+				<div role="tabpanel" class="tab-pane active" id="social">
+					<div class="modal-body">
+					<div class="col-md-10 col-md-offset-1 marbottom20">
+						<div class="user-account">
+							<!-- form -->
+							<form method="post">
+								<div class="col-md-10 col-md-offset-1 user-page">
+									<button fb-login type="button" class="btn btn-primary btn-facebook cv-btn-login"><i class="fa fa-facebook-square cv-icon-social" aria-hidden="true"></i> Facebook</button>
+									<button linked-in type="button" class="btn btn-primary btn-linkedin cv-btn-login"><i class="fa fa-linkedin-square cv-icon-social" aria-hidden="true"></i> Linkedin</button>
+									<button g-login type="button" class="btn btn-primary btn-google cv-btn-login"><i class="fa fa-google-plus-square cv-icon-social" aria-hidden="true"></i> Google+</button>
+									<a href="http://hicv.dev/dang-ky-tai-khoan-hicv.html" class="btn btn-primary cv-btn-login">Đăng ký tài khoản mới</a>
+
+								</div>
+
+
+							</form><!-- form -->
+						</div>
+
+					</div>
+					</div>
+				</div>
+				<div role="tabpanel" class="tab-pane" id="acc">
+					<div class="modal-body">
+						<div class="col-md-10 col-md-offset-1 marbottom20">
+							<div class="user-account">
+								<!-- form -->
+								<form method="post">
+									<input type="hidden" name="_token" value="NVgUix2TM7Nr40dh4CHWuv4M9AlkBbJaWx6XSt3Z">
+									<div class="form-group">
+										<input type="email" ng-model="user.email" placeholder="Email" class="form-control" id="email" value="" name="email" required="required">
+									</div>
+									<div class="form-group">
+										<input type="password" ng-model="user.password" placeholder="Mật khẩu" class="form-control" id="password" name="password" required="required" minlength="8">
+									</div>
+									<div ng-if="messageError">
+										<p class="text-danger">{{messageError}}</p>
+									</div>
+									<div class="col-md-10 col-md-offset-1 user-page">
+										<button ng-click="login()" class="btn btn-primary btn-hicv cv-btn-login" type="submit">Đăng Nhập</button>
+										<a href="{{ config.API + 'http://hicv.dev/dang-ky-tai-khoan-hicv.html'}}" class="btn btn-primary cv-btn-login">Đăng ký tài khoản mới</a>
+
+									</div>
+
+
+								</form><!-- form -->
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>

@@ -1,0 +1,91 @@
+<div class="modal modal-rearrange-edit" style="display: block;">
+	<div id="" class="modal-dialog modal-lg layout-popup">
+		<div class="modal-content">
+			<div>
+				<div class="modal-header">
+					<button class="close animated-hover" type="button" ng-click="$close()"><i class="icon icon-close-1 rotate"></i></button>
+					<h3 class="modal-title">Rearrange Sections</h3>
+					<div class="heading-btn-holder">
+						<a class="btn btn-default right-ty" ng-click="addSection()">
+							<i class="icon icon-addsection-1 right-ty"></i>Add Sections
+						</a>
+						<button dnd-list="$scope.dataDeleted" dnd-drop="onDrop(objectDeleted, item, index, true)" type="button" class="btn btn-delete-section">
+							<i class="icon icon-13-trash-bin right-ty"></i>Drop here to delete
+						</button>
+					</div>
+				</div>
+				<div class="modal-body">
+					<div class="reorder-resume">
+						<div ng-if="cv.layout == 'double'" class="reorder-page" ng-repeat="list in lists track by $index">
+							<div class="reorder-page-title">Page {{$index + 1}}</div>
+							<div class="reorder-page-content">
+								<div class="reorder-header" ng-if="$index == 0" style="height: 30.3333px;"></div>
+								<div class="reorder-page-columns">
+
+									<div dnd-list dnd-drop="onDrop(list.left, item, index)" class="reaorder-column reaorder-column-first" >
+										<div ng-repeat="item in list.left.items"
+										     dnd-draggable="getSelectedItemsIncluding(list.left, item)"
+										     dnd-dragstart="onDragstart(list.left, event)"
+										     dnd-moved="onMoved(list.left)"
+										     dnd-dragend="list.left.dragging = false"
+										     dnd-external-sources="true"
+										     dnd-selected="item.selected = !item.selected"
+										     ng-class="{'selected': item.selected}"
+										     ng-hide="list.left.dragging && item.selected"
+										     class="reorder-item" tooltip-placement="top" uib-tooltip="{{item.key}}" draggable="true">
+											<div class="reorder-ghost"></div>
+											<span><span class="reorder-section" ng-style="addStyle(item.height)"></span></span>
+										</div>
+										<div class="reorder-ghost"></div>
+									</div>
+									<div dnd-list dnd-drop="onDrop(list.right, item, index)" class="reaorder-column reaorder-column-second">
+										<div ng-repeat="item in list.right.items"
+										     dnd-draggable="getSelectedItemsIncluding(list.right, item)"
+										     dnd-dragstart="onDragstart(list.right, event)"
+										     dnd-moved="onMoved(list.right)"
+										     dnd-dragend="list.right.dragging = false"
+										     dnd-external-sources="true"
+										     dnd-selected="item.selected = !item.selected"
+										     ng-class="{'selected': item.selected}"
+										     ng-hide="list.right.dragging && item.selected" tooltip-placement="top" uib-tooltip="{{item.key}}"
+										     class="reorder-item" draggable="true">
+											<div class="reorder-ghost"></div>
+											<span><span class="reorder-section" ng-style="addStyle(item.height)"></span></span>
+										</div>
+										<div class="reorder-ghost"></div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+
+						<div ng-if="cv.layout == 'single'" class="reorder-page" ng-repeat="list in lists track by $index">
+							<div class="reorder-page-title">Page {{$index + 1}}</div>
+							<div class="reorder-page-content">
+								<div class="reorder-header" ng-if="$index == 0" style="height: 30.3333px;"></div>
+
+								<div dnd-list dnd-drop="onDrop(list.center, item, index)" class="reaorder-column">
+									<div ng-repeat="item in list.center.items"
+										 dnd-draggable="getSelectedItemsIncluding(list.center, item)"
+										 dnd-dragstart="onDragstart(list.center, event)"
+										 dnd-moved="onMoved(list.center)"
+										 dnd-dragend="list.center.dragging = false"
+										 dnd-external-sources="true"
+										 dnd-selected="item.selected = !item.selected"
+										 ng-class="{'selected': item.selected}"
+										 ng-hide="list.center.dragging && item.selected" tooltip-placement="top" uib-tooltip="{{item.key}}"
+										 class="reorder-item" draggable="true">
+										<div class="reorder-ghost"></div>
+										<span><span class="reorder-section" ng-style="addStyle(item.height)"></span></span>
+									</div>
+									<div class="reorder-ghost"></div>
+								</div>
+							</div>
+						</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

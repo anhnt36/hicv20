@@ -1,0 +1,55 @@
+<div id="SkillSection-0" class="resume-section SkillSection" change-height>
+    <div class="resume-section-container clickable editable" ng-click="$root.clickInputTitleSection($event)" click-off
+         on-click-off="$root.clickOffInputTitleSection($event)">
+        <div class="resume-section-text-container">
+            <div class="editable-field-wrapper">
+                <textarea msd-elastic
+                          class="editable-field resume-first-border resume-section-text resume-heading-font resume-first-color"
+                          placeholder="{{'skill' | translate}}" autocomplete="off" rows="1"
+                          style="overflow: hidden; word-wrap: break-word; height: 39px;"
+                          ng-model="$ctrl.data.name">
+                </textarea></div>
+        </div>
+    </div>
+    <div dnd-list="$ctrl.data.items"
+         dnd-allowed-types="[$ctrl.data.key]"
+         dnd-external-sources="true"
+         dnd-dragover="$ctrl.dragoverCallback(event, index, external, type)"
+         dnd-drop="$ctrl.dropCallback(event, index, item, external, type)" class="moveable-items">
+        <div class="dndPlaceholder" ng-style="$ctrl.styleDndPlaceholder"></div>
+        <div  ng-repeat="item in $ctrl.data.items"
+              dnd-type="item.key"
+              dnd-effect-allowed="copyMove"
+              dnd-moved="$ctrl.data.items.splice($index, 1)"
+              dnd-draggable="$ctrl.getSelectedItemsIncluding($ctrl.data, item)"
+              dnd-dragstart="$ctrl.onDragstart($ctrl.data, event)"
+              dnd-dragend="$ctrl.data.dragging = false"
+              dnd-selected="item.selected = !item.selected"
+              ng-hide="$ctrl.data.dragging && item.selected" class="line-item editable clickable resume-item-holder"
+             id="sections-5-items-0" draggable="false" ng-click="$ctrl.clickSection($event, $index)" click-off
+             on-click-off="$ctrl.clickSectionOff($event, $index)">
+            <template-popover ng-if="$ctrl.displayPopover[$index]" field-check="$ctrl.fieldCheck" data="item"
+                              template-data="$ctrl.data"
+                              icon-add="true" icon-time="true" icon-cog="true" icon-trash="true"
+                              key="$index"></template-popover>
+            <div class="item-object skill-item skill-item-hazard">
+                <div class="inner">
+                    <div class="editable-field-wrapper">
+                        <textarea msd-elastic
+                                  class="editable-field skill-item-name resume-second-color"
+                                  placeholder="{{'skill' | translate}}"
+                                  autocomplete="off" rows="1"
+                                  style="overflow: hidden; word-wrap: break-word; height: 20px;"
+                                  ng-model="item.name">
+                        </textarea>
+                    </div>
+                    <div class="slider-component slider-component-hazard" ng-if="item.level.display">
+                        <div class="slider-container editable">
+                            <rzslider rz-slider-model="item.level.value" rz-slider-options="$ctrl.optionSlider"></rzslider>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

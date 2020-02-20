@@ -1,0 +1,16 @@
+<div ng-if="$ctrl.tpType == 'text'" class="switch-button switch-button-binary martop10" ng-class="$ctrl.tpClass">
+    <span class="switch-button-label" ng-bind="$ctrl.title"></span>
+    <div class="switch-button-all" ng-click="$ctrl.clickDisplayOption($ctrl.data)">
+        <div class="option {{$ctrl.data.display ? 'invisible' : 'selected secondary'}}"></div>
+        <div class="option {{$ctrl.data.display ? 'selected' : 'invisible'}}"></div>
+    </div>
+    <div style="clear:both;"></div>
+</div>
+
+<div ng-if="$ctrl.tpType == 'image'" class="switch-button martop10"><span class="switch-button-label">Photo Style</span>
+    <div class="switch-button-all" ng-click="$ctrl.clickChangeStyleOption($ctrl.data)">
+        <div class="option {{$ctrl.data.style == 0 ? 'selected' : ''}}"></div>
+        <div class="option {{$ctrl.data.style == 1 ? 'selected' : ''}}"></div>
+    </div>
+    <div style="clear:both;"></div>
+</div>

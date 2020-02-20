@@ -1,0 +1,140 @@
+<div id="InfoSection" class="clickable" ng-click="$ctrl.clickSection($event)" click-off
+     on-click-off="$ctrl.clickSectionOff($event)" change-height>
+    <template-popover css="popover-section-item-header" ng-if="$ctrl.displayPopover" field-check="$ctrl.fieldCheck" data="$ctrl.data" icon-upload="true" icon-cog="true"></template-popover>
+    <div class="resume-header resume-header-with-photo editable">
+        <div class="resume-header-col resume-header-col-left">
+            <div class="editable-field-wrapper">
+                <textarea msd-elastic
+                        class="editable-field name resume-heading-font resume-first-color uppercase-name"
+                        placeholder="{{'yourName' | translate}}"
+                        maxlength="100"
+                        ng-model="$ctrl.data.name.value"
+                        spellcheck="false"
+                        autocomplete="off"
+                        rows="1"
+                        style="overflow: hidden; word-wrap: break-word; height: 50px;">
+                </textarea>
+            </div>
+            <span>
+                <div class="editable-field-wrapper">
+                    <textarea msd-elastic
+                              ng-if="$ctrl.data.say.display"
+                              class="editable-field title resume-heading-font resume-second-color"
+                              placeholder="{{'briefAboutYou' | translate}}"
+                              maxlength="500"
+                              ng-model="$ctrl.data.say.value"
+                              spellcheck="false"
+                              autocomplete="off"
+                              rows="1"
+                              style="overflow: hidden; word-wrap: break-word; height: 25px;">
+                    </textarea>
+                </div>
+            </span>
+
+            <div class="with-icon-container top-sm">
+                <div ng-if="$ctrl.data.phone.display" class="with-icon"><i
+                        class="fa fa-phone resume-second-color width15"
+                        aria-hidden="true"></i>&nbsp;&nbsp;
+                    <div class="editable-field-wrapper">
+                        <textarea msd-elastic
+                                  class="editable-field"
+                                  placeholder="{{'phone' | translate}}"
+                                  ng-model="$ctrl.data.phone.value"
+                                  autocomplete="off"
+                                  rows="1"
+                                  ng-blur="$ctrl.checkPhone()"
+                                  style="overflow: hidden; word-wrap: break-word; height: 16px;">
+                        </textarea>
+                    </div>
+                </div>
+                <div ng-if="$ctrl.data.email.display" class="with-icon"><i
+                        class="fa fa-at resume-second-color width15"></i>&nbsp;&nbsp;
+                    <div class="editable-field-wrapper">
+                        <textarea msd-elastic
+                                  class="editable-field"
+                                  placeholder="{{'email' | translate}}"
+                                  ng-model="$ctrl.data.email.value"
+                                  autocomplete="off"
+                                  rows="1"
+                                  style="overflow: hidden; word-wrap: break-word; height: 16px;">
+                        </textarea>
+                    </div>
+                </div>
+                <div ng-if="$ctrl.data.link.display" class="with-icon url-link "><i
+                        class="fa fa-link resume-second-color width15"></i>&nbsp;&nbsp;
+                    <div class="editable-field-wrapper">
+                        <textarea msd-elastic
+                                  class="editable-field"
+                                  placeholder="{{'websiteOrLink' | translate}}"
+                                  ng-model="$ctrl.data.link.value"
+                                  autocomplete="off"
+                                  rows="1"
+                                  style="overflow: hidden; word-wrap: break-word; height: 16px;">
+                        </textarea>
+                    </div>
+                </div>
+                <div ng-if="$ctrl.data.location.display" class="with-icon"><i
+                        class="fa fa-map-marker resume-second-color width15"></i>&nbsp;&nbsp;
+                    <div class="editable-field-wrapper">
+                        <textarea msd-elastic
+                                  class="editable-field"
+                                  placeholder="{{'location' | translate}}"
+                                  ng-model="$ctrl.data.location.value"
+                                  autocomplete="off"
+                                  rows="1"
+                                  style="overflow: hidden; word-wrap: break-word; height: 16px;">
+                        </textarea>
+                    </div>
+                </div>
+                <div ng-if="$ctrl.data.facebook.display" class="with-icon"><i
+                        class="fa fa-facebook-square resume-second-color width15"></i>&nbsp;&nbsp;
+                    <div class="editable-field-wrapper">
+                        <textarea msd-elastic
+                                  class="editable-field"
+                                  placeholder="Facebook"
+                                  ng-model="$ctrl.data.facebook.value"
+                                  autocomplete="off"
+                                  rows="1"
+                                  style="overflow: hidden; word-wrap: break-word; height: 16px;">
+                        </textarea>
+                    </div>
+                </div>
+                <div ng-if="$ctrl.data.linkedin.display" class="with-icon"><i
+                        class="fa fa-linkedin-square resume-second-color width15"></i>&nbsp;&nbsp;
+                    <div class="editable-field-wrapper">
+                        <textarea msd-elastic
+                                  class="editable-field"
+                                  placeholder="Linkedin"
+                                  ng-model="$ctrl.data.linkedin.value"
+                                  autocomplete="off"
+                                  rows="1"
+                                  style="overflow: hidden; word-wrap: break-word; height: 16px;">
+                        </textarea>
+                    </div>
+                </div>
+                <div ng-if="$ctrl.data.skype.display" class="with-icon"><i
+                        class="fa fa-skype resume-second-color width15"></i>&nbsp;&nbsp;
+                    <div class="editable-field-wrapper">
+                        <textarea msd-elastic
+                                  class="editable-field"
+                                  placeholder="Skype"
+                                  ng-model="$ctrl.data.skype.value"
+                                  autocomplete="off"
+                                  rows="1"
+                                  style="overflow: hidden; word-wrap: break-word; height: 16px;">
+                        </textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div  class="resume-header-col resume-header-col-right photo-container" ng-if="$ctrl.data.image.display">
+            <div ng-click="$ctrl.clickInputAvatar()"  style="background-image:url({{$ctrl.fileImage}});"
+                 class="photo editable {{$ctrl.data.image.style == 1 ? 'photo-rect' : 'photo-round'}}">
+            </div>
+            <input id="cv-upload-avatar" ng-hide="true" onload="$ctrl.change" hidden type="file" accept="image/*" maxsize="5000" ng-model="$ctrl.data.image.value" base-sixty-four-input>
+        </div>
+        <!--<span ng-show="form.files.$error.maxsize">Files must not exceed 5000 KB</span>-->
+        <div class="clearfix"></div>
+    </div>
+</div>

@@ -1,0 +1,89 @@
+<div id="AchievementSection"
+     class="resume-section AchievementSection" change-height>
+	<div class="resume-section-container clickable editable" ng-click="$ctrl.clickSectionTitle($event)" click-off
+	     on-click-off="$ctrl.clickSectionTitleOff($event)">
+		<template-popover ng-if="$ctrl.displayPopoverTitle" field-check="$ctrl.fieldCheck" data="item"
+						  template-data="$ctrl.data" delete-section="true" icon-trash="true" key="$index"></template-popover>
+		<div class="resume-section-text-container">
+			<div class="editable-field-wrapper">
+				<textarea msd-elastic
+						  class="editable-field resume-first-border resume-section-text resume-heading-font resume-first-color"
+						  placeholder="{{'achievements' | translate}}"
+						  ng-model="$ctrl.data.name"
+						  autocomplete="off"
+						  rows="1"
+						  style="overflow: hidden; word-wrap: break-word; height: 39px;" capitalize-first>
+				</textarea>
+			</div>
+		</div>
+	</div>
+	<style>
+		.dndPlaceholder {
+			margin-top: 5px;
+			margin-bottom: 5px;
+			background-color: #ddd !important;
+			display: inline-block;
+		}
+	</style>
+	<div dnd-list="$ctrl.data.items"
+		 dnd-allowed-types="[$ctrl.data.key]"
+	     dnd-external-sources="true"
+	     dnd-dragover="$ctrl.dragoverCallback(event, index, external, type)"
+	     dnd-drop="$ctrl.dropCallback(event, index, item, external, type)" class="resume-section">
+		<div class="dndPlaceholder" ng-style="$ctrl.styleDndPlaceholder"></div>
+		<div ng-repeat="item in $ctrl.data.items"
+			 dnd-type="item.key"
+			 dnd-effect-allowed="copyMove"
+			 dnd-moved="$ctrl.data.items.splice($index, 1)"
+			 dnd-draggable="$ctrl.getSelectedItemsIncluding($ctrl.data, item)"
+			 dnd-dragstart="$ctrl.onDragstart($ctrl.data, event)"
+			 dnd-dragend="$ctrl.data.dragging = false"
+			 dnd-selected="item.selected = !item.selected"
+			 ng-hide="$ctrl.data.dragging && item.selected" class="resume-item-holder line-item editable clickable"
+			 id="sections-1-items-0" ng-click="$ctrl.clickSection($event, $index)"
+			 click-off on-click-off="$ctrl.clickSectionOff($event, $index)">
+			<div >
+				<template-popover ng-if="$ctrl.displayPopover[$index]" field-check="$ctrl.fieldCheck" data="item"
+				                  template-data="$ctrl.data"
+				                  icon-add="true" icon-time="true" icon-cog="true" icon-trash="true" list-icon="true" key="$index"></template-popover>
+
+				<div class="item-object achievement-item">
+					<div class="inner">
+						<div class="achievement-item-content">
+							<div class="achievement-item-icon resume-second-color editable" ng-if="item.icon.display">
+								<div class="" icon="139-free-diamond-01">
+									<i click-list-icon class="{{item.icon.value}}  resume-second-color"></i>
+								</div>
+							</div>
+
+							<div class="editable-field-wrapper" ng-if="item.title.display">
+								<textarea msd-elastic
+										  class="editable-field achievement-item-title resume-first-color"
+										  placeholder="{{'yourMostProudOf' | translate}}"
+										  ng-model="item.title.value"
+										  autocomplete="off"
+										  rows="1"
+										  style="overflow: hidden; word-wrap: break-word; height: 20px;" capitalize-first>
+								</textarea>
+							</div>
+						</div>
+						<div class="padded-item-content" ng-if="item.description.display">
+							<div class="editable-field-wrapper">
+								<textarea msd-elastic
+										  class="editable-field achievement-item-description"
+										  placeholder="{{'aBitYourAchievement' | translate}}"
+										  ng-model="item.description.value"
+										  autocomplete="off"
+										  maxlength="1000"
+										  rows="1"
+										  style="overflow: hidden; word-wrap: break-word; height: 23px;" capitalize-first>
+								</textarea>
+								<!--data-allow-new-line="true"-->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

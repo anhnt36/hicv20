@@ -1,0 +1,17 @@
+<div class="popover-wrap popover-section" ng-class="$ctrl.css">
+    <div class="popover-container  popover-bottom">
+        <div class="popover-inner">
+            <div class="centered">
+                <div class="actual-content">
+                    <a class="" ng-if="$ctrl.iconAdd != undefined" title="Options" ng-click="$ctrl.addItem()"><span class="fa fa-plus"></span></a>
+                    <a class="" ng-if="$ctrl.listIcon != undefined" title="List Icon"><span id="cv-list-icon"  popover-placement="top" popover-trigger="'outsideClick'" uib-popover-template="$ctrl.dynamicPopover.TemplateIcon" popover-class="popover-top-setup" class="fa fa-star-o"></span></a>
+                    <a title="Upload photo" ng-if="$ctrl.iconUpload != undefined"><span class="fa fa-camera"></span></a>
+                    <a class="" ng-if="$ctrl.iconCog != undefined" title="Options"><span popover-placement="bottom" popover-trigger="'outsideClick'" uib-popover-template="$ctrl.dynamicPopover.TemplateUrl" popover-class="popover-header-setup" class="fa fa-cog"></span></a>
+                    <a class="" ng-if="$ctrl.iconTrash != undefined" title="Options" ng-click="$ctrl.deleteItem()"><span class="fa fa-trash-o"></span></a>
+                    <a class="datepicker" ng-if="$ctrl.iconTime != undefined && $ctrl.data.datePeriod != undefined" title="Options"><span id="cv-datetime" popover-placement="top" popover-trigger="'outsideClick'" uib-popover-template="$ctrl.dynamicPopover.TemplateDate" popover-class="popover-date" class="fa fa-calendar"></span></a>
+                    <a class="example-button" ng-if="$ctrl.cv.selectedSection != 'info'" ng-click="$ctrl.openExampleSectionModal()">Example</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,110 @@
+<div id="ExperienceSection" class="resume-section ExperienceSection " >
+	<div class="resume-section-container editable clickable">
+		<div class="resume-section-text-container">
+			<div class="editable-field-wrapper">
+				<textarea msd-elastic
+						  class="editable-field resume-first-border resume-section-text resume-heading-font resume-first-color"
+						  placeholder="{{'experience' | translate}}"
+						  maxlength="500"
+						  ng-model="$ctrl.data.name"
+						  autocomplete="off"
+						  rows="1"
+						  style="overflow: hidden; word-wrap: break-word; height: 39px;">
+				</textarea>
+			</div>
+		</div>
+	</div>
+	<div class="resume-section ExperienceSection ">
+		<div ng-repeat="item in $ctrl.data.items">
+			<div class="resume-item-holder line-item editable clickable"
+			     id="sections-0-items-0">
+
+				<div class="item-object experience-item">
+					<div class="inner">
+						<div class="editable-field-wrapper">
+							<textarea msd-elastic
+									  class="editable-field item-position resume-first-color resume-heading-font"
+									  placeholder="{{'titleOrPosition' | translate}}"
+									  ng-model="item.title"
+									  autocomplete="off"
+									  rows="1"
+									  style="overflow: hidden; word-wrap: break-word; height: 25px;">
+							</textarea>
+						</div>
+						<div class="editable-field-wrapper">
+							<textarea msd-elastic
+									  ng-if="item.company.display"
+									  class="editable-field item-workplace resume-second-color"
+									  placeholder="{{'company' | translate}}"
+									  ng-model="item.company.value"
+									  autocomplete="off"
+									  maxlength="60"
+									  rows="1"
+									  style="overflow: hidden; word-wrap: break-word; height: 20px;">
+							</textarea>
+						</div>
+						<div class="with-icon-container top-xty">
+							<a href="" role="button" class="btn btn-sm btn-resume-data btn-link with-icon" click-datetime>
+								<i class="icon icon-40-free-calendar"></i>
+								<span ng-if="!item.datePeriod.monthFrom && !item.datePeriod.yearFrom && !item.datePeriod.monthTo && !item.datePeriod.yearTo" ng-click="$root.changeDate($event)">{{'datetime' | translate}}</span>
+								<span ng-if="item.datePeriod.monthFrom" ng-bind="item.datePeriod.monthFrom | translate"></span>&nbsp;
+								<span ng-if="item.datePeriod.yearFrom" ng-bind="'/' + item.datePeriod.yearFrom"></span>&nbsp;
+								<span ng-if="item.datePeriod.monthFrom || item.datePeriod.yearFrom || item.datePeriod.monthTo || item.datePeriod.yearTo">-</span>&nbsp;
+								<span ng-if="item.datePeriod.monthTo && !item.datePeriod.onGoing" ng-bind="item.datePeriod.monthTo | translate"></span>&nbsp;
+								<span ng-if="item.datePeriod.yearTo && !item.datePeriod.onGoing" ng-bind="'/' + item.datePeriod.yearTo"></span>
+								<span ng-if="(item.datePeriod.monthFrom || item.datePeriod.yearFrom || item.datePeriod.monthTo || item.datePeriod.yearTo) && item.datePeriod.onGoing == true">{{'ongoing' | translate}}</span>
+							</a>
+							<div class="with-icon  item-stretch" ng-if="item.location.display">
+								<i class="icon icon-05-pin-map"></i>
+								<div class="editable-field-wrapper">
+									<div class="editable-field-wrapper">
+										<textarea msd-elastic
+												  class="editable-field editable-field-xs"
+												  placeholder="{{'location' | translate}}"
+												  ng-model="item.location.value"
+												  autocomplete="off"
+												  maxlength="100"
+												  rows="1"
+												  style="overflow: hidden; word-wrap: break-word; height: 15px;">
+										</textarea>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="editable-field-wrapper" ng-if="item.shortSummary.display">
+							<div class="editable-field-wrapper">
+								<textarea msd-elastic
+										  class="editable-field item-description"
+										  placeholder="{{'companyDescription' | translate}}"
+										  ng-model="item.shortSummary.value"
+										  autocomplete="off"
+										  data-allow-new-line="true"
+										  rows="1"
+										  style="overflow: hidden; word-wrap: break-word; height: 18px;">
+								</textarea>
+							</div>
+						</div>
+						<div class="top-xty" ng-if="item.example.display" ng-repeat="ex in item.example.data track by $index">
+							<div class="media top-xty no-bottom">
+								<div class="media-left media-left-xs">
+									<i class="icon icon-dot-1 bullet-dot"></i>
+								</div>
+								<div class="media-body">
+									<div class="editable-field-wrapper">
+										<textarea focus-if="$ctrl.focus && $index == (item.example.data.length - 1)" ng-model="item.example.data[$index]"
+												  ng-bind-html="item.example.data[$index]"
+												  ng-keydown="$ctrl.keydown($event, item)"
+												class="editable-field editable-field-muted editable-field-sm msd-elastic"
+												placeholder="{{'exampleOutcomeOfActivity' | translate}}"
+												autocomplete="off" rows="1"
+												style="overflow: hidden; word-wrap: break-word; height: 18px;"></textarea>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

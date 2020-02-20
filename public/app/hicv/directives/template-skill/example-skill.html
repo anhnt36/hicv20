@@ -1,0 +1,37 @@
+<div id="SkillSection-0" class="resume-section SkillSection" change-height>
+    <div class="resume-section-container clickable editable">
+        <div class="resume-section-text-container">
+            <div class="editable-field-wrapper">
+                <textarea msd-elastic
+                          class="editable-field resume-first-border resume-section-text resume-heading-font resume-first-color"
+                          placeholder="{{'skill' | translate}}" autocomplete="off" rows="1"
+                          style="overflow: hidden; word-wrap: break-word; height: 39px;"
+                          ng-model="$ctrl.data.name" capitalize-first>
+                </textarea></div>
+        </div>
+    </div>
+    <div class="moveable-items">
+        <div ng-repeat="item in $ctrl.data.items"
+             class="line-item editable clickable resume-item-holder"
+             id="sections-5-items-0">
+            <div class="item-object skill-item skill-item-hazard">
+                <div class="inner">
+                    <div class="editable-field-wrapper">
+                        <textarea msd-elastic
+                                  class="editable-field skill-item-name resume-second-color"
+                                  placeholder="{{'skill' | translate}}"
+                                  autocomplete="off" rows="1"
+                                  style="overflow: hidden; word-wrap: break-word; height: 20px;"
+                                  ng-model="item.name" capitalize-first>
+                        </textarea>
+                    </div>
+                    <div class="slider-component slider-component-hazard" ng-if="item.level.display">
+                        <div class="slider-container editable">
+                            <rzslider rz-slider-model="item.level.value" rz-slider-options="$ctrl.optionSlider"></rzslider>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

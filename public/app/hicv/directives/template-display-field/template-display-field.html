@@ -1,0 +1,14 @@
+<div class="popover-open-container popover-section-item">
+    <div class="popover-wrap">
+        <div class="popover-container popover-bottom">
+            <div class="popover-inner">
+                <div class="popover-open-container" style="padding: 5px 15px 15px 15px;">
+                    <div ng-repeat="field in $ctrl.fieldCheck track by $index">
+                        <check-field ng-if="field == 'style'" tp-type = 'image' tp-class="martop10" data="$ctrl.data['image']" title="Show {{field}}"></check-field>
+                        <check-field ng-if="field != 'style'" data="$ctrl.data[field]" title="{{field | translate}}"></check-field>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

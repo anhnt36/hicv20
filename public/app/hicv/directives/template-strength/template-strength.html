@@ -1,0 +1,63 @@
+<div id="TalentSection-0" class="resume-section TalentSection" change-height>
+    <div class="resume-section-container resume-section-selected clickable editable"
+         ng-click="$root.clickInputTitleSection($event)" click-off
+         on-click-off="$root.clickOffInputTitleSection($event)">
+        <div class="resume-section-text-container">
+            <div class="editable-field-wrapper"><textarea
+                    msd-elastic ng-model="$ctrl.data.name"
+                    class="editable-field resume-first-border resume-section-text resume-heading-font resume-first-color"
+                    placeholder="{{'strength' | translate}}" autocomplete="off" rows="1"
+                    style="overflow: hidden; word-wrap: break-word; height: 39px;">
+                </textarea>
+            </div>
+        </div>
+    </div>
+    <div dnd-list="$ctrl.data.items"
+         dnd-allowed-types="[$ctrl.data.key]"
+         dnd-external-sources="true"
+         dnd-dragover="$ctrl.dragoverCallback(event, index, external, type)"
+         dnd-drop="$ctrl.dropCallback(event, index, item, external, type)" class="moveable-items">
+        <div class="dndPlaceholder" ng-style="$ctrl.styleDndPlaceholder"></div>
+        <div ng-repeat="item in $ctrl.data.items"
+             dnd-type="item.key"
+             dnd-effect-allowed="copyMove"
+             dnd-moved="$ctrl.data.items.splice($index, 1)"
+             dnd-draggable="$ctrl.getSelectedItemsIncluding($ctrl.data, item)"
+             dnd-dragstart="$ctrl.onDragstart($ctrl.data, event)"
+             dnd-dragend="$ctrl.data.dragging = false"
+             dnd-selected="item.selected = !item.selected"
+             ng-hide="$ctrl.data.dragging && item.selected" class="resume-item-holder line-item editable clickable"
+             id="sections-7-items-0" draggable="false" ng-click="$ctrl.clickSection($event, $index)" click-off
+             on-click-off="$ctrl.clickSectionOff($event, $index)">
+            <template-popover ng-if="$ctrl.displayPopover[$index]" field-check="$ctrl.fieldCheck" data="item"
+                              template-data="$ctrl.data"
+                              icon-add="true" icon-time="true" icon-cog="true" icon-trash="true" list-icon="true" key="$index">
+            </template-popover>
+            <div class="item-object talent-item">
+                <div class="inner">
+                    <div class="talent-item-content">
+                        <div class="talent-item-icon editable" ng-if="item.icon.display">
+                            <div class=""><i click-list-icon class="{{item.icon.value}}  resume-second-color"></i></div>
+                        </div>
+                        <div class="editable-field-wrapper"><textarea
+                                msd-elastic ng-model="item.name"
+                                class="editable-field passion-item-title resume-first-color "
+                                placeholder="{{'yourUniqueTalent' | translate}}" autocomplete="off" rows="1"
+                                style="overflow: hidden; word-wrap: break-word; height: 20px;">
+                                    </textarea></div>
+                    </div>
+                    <div class="padded-item-content" ng-if="item.description.display">
+                        <div class="editable-field-wrapper">
+                            <textarea
+                                    msd-elastic ng-model="item.description.value"
+                                    class="editable-field passion-item-description"
+                                    placeholder="{{'yourUniqueTalentDescription' | translate}}"
+                                    maxlength="1000" autocomplete="off" rows="1"
+                                    style="overflow: hidden; word-wrap: break-word; height: 22px;">fsdgfdgs</textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,61 @@
+<div id="AchievementSection"
+     class="resume-section AchievementSection">
+	<div class="resume-section-container clickable editable">
+		<div class="resume-section-text-container">
+			<div class="editable-field-wrapper">
+				<textarea msd-elastic
+						  class="editable-field resume-first-border resume-section-text resume-heading-font resume-first-color"
+						  placeholder="{{'achievements' | translate}}"
+						  ng-model="$ctrl.data.name"
+						  autocomplete="off"
+						  rows="1"
+						  style="overflow: hidden; word-wrap: break-word; height: 39px;">
+				</textarea>
+			</div>
+		</div>
+	</div>
+	<div class="resume-section">
+		<div ng-repeat="item in $ctrl.data.items"
+		     class="resume-item-holder line-item editable clickable"
+			 id="sections-1-items-0">
+			<div >
+				<div class="item-object achievement-item">
+					<div class="inner">
+						<div class="achievement-item-content">
+							<div class="achievement-item-icon resume-second-color editable" ng-if="item.icon.display">
+								<div class="" icon="139-free-diamond-01">
+									<i click-list-icon class="{{item.icon.value}}  resume-second-color"></i>
+								</div>
+							</div>
+
+							<div class="editable-field-wrapper" ng-if="item.title.display">
+								<textarea msd-elastic
+										  class="editable-field achievement-item-title resume-first-color"
+										  placeholder="{{'yourMostProudOf' | translate}}"
+										  ng-model="item.title.value"
+										  autocomplete="off"
+										  rows="1"
+										  style="overflow: hidden; word-wrap: break-word; height: 20px;">
+								</textarea>
+							</div>
+						</div>
+						<div class="padded-item-content" ng-if="item.description.display">
+							<div class="editable-field-wrapper">
+								<textarea msd-elastic
+										  class="editable-field achievement-item-description"
+										  placeholder="{{'aBitYourAchievement' | translate}}"
+										  ng-model="item.description.value"
+										  autocomplete="off"
+										  maxlength="1000"
+										  rows="1"
+										  style="overflow: hidden; word-wrap: break-word; height: 23px;">
+								</textarea>
+								<!--data-allow-new-line="true"-->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

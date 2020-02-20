@@ -1,0 +1,35 @@
+<div class="popover-open-container" style="padding: 0px 15px 15px 15px !important;" id="item-0-0-popover">
+	<div class="date-range-picker-container"><span class="heading">From</span>
+		<div class="clearfix"></div>
+		<div class="pickers">
+			<div class="white-select">
+				<select ng-model="$ctrl.data.monthFrom" ng-change="$ctrl.checkDate()">
+					<option ng-repeat="month in $ctrl.months" ng-disabled="($ctrl.data.yearTo && $ctrl.data.yearTo < $ctrl.data.yearFrom) || ($ctrl.data.monthTo && month > $ctrl.data.monthTo && $ctrl.data.yearFrom == $ctrl.data.yearTo)" value="{{month || translate}}">{{month | translate}}</option>
+				</select>
+			</div>
+			<div class="white-select">
+				<select ng-model="$ctrl.data.yearFrom" ng-change="$ctrl.checkDate()">
+					<option ng-repeat="year in $ctrl.years" ng-disabled="($ctrl.data.yearTo && $ctrl.data.yearTo < year) || ($ctrl.data.monthFrom > $ctrl.data.monthTo && $ctrl.data.yearFrom == year)" value="{{year}}">{{year}}</option>
+				</select>
+			</div>
+		</div>
+		<div><span class="heading">To</span>
+			<div class="ongoing form-fields">
+				<div class="checkbox {{$ctrl.data.onGoing == true ? 'checkbox-selected' : ''}}" ng-click="$ctrl.clickOnGoing($event)"></div>
+				<span>{{'ongoing' | translate}}</span></div>
+			<div class="clearfix"></div>
+			<div class="pickers">
+				<div class="white-select">
+					<select ng-disabled="$ctrl.data.onGoing == true" ng-model="$ctrl.data.monthTo" ng-change="$ctrl.checkDate()">
+						<option ng-repeat="month in $ctrl.months" ng-disabled="($ctrl.data.yearFrom > year) || ($ctrl.data.monthFrom > month && $ctrl.data.yearFrom == $ctrl.data.yearTo)" value="{{month}}">{{month | translate}}</option>
+					</select>
+				</div>
+				<div class="white-select">
+					<select ng-disabled="$ctrl.data.onGoing == true" ng-model="$ctrl.data.yearTo" ng-change="$ctrl.checkDate()">
+						<option ng-repeat="year in $ctrl.years" ng-disabled="($ctrl.data.yearFrom > year) || ($ctrl.data.monthFrom > $ctrl.data.monthTo && $ctrl.data.yearFrom == year)" value="{{year}}">{{year}}</option>
+					</select>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

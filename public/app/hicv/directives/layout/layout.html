@@ -1,0 +1,39 @@
+<div class="resume-renderer-page browser-resume-page" ng-style="stylePage">
+    <div class="resume-background-wrapper {{hoverPage ? 'resume-editor-overlay' : ''}}"
+         style="background-image: url(/images/backgrounds/{{layout.backgrounds[cv.background].src}})">
+    </div>
+    <div class="resume-page-wrapper">
+        <div>
+            <hoc-directive type="section_first.template" data="section_first"></hoc-directive>
+        </div>
+        <div ng-if="cv.layout == 'double'">
+            <div class="resume-renderer-two-column">
+                <div ng-repeat="l in pages_display.left">
+                    <hoc-directive type="l.template" data="l"></hoc-directive>
+                </div>
+            </div>
+            <div class="resume-renderer-two-column">
+                <div ng-repeat="r in pages_display.right">
+                    <hoc-directive type="r.template" data="r"></hoc-directive>
+                </div>
+            </div>
+        </div>
+        <div ng-if="cv.layout == 'single'">
+            <div class="resume-renderer-one-column">
+                <div ng-repeat="l in pages_display">
+                    <hoc-directive type="l.template" data="l"></hoc-directive>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="resume-footer">
+        <!--<div class="enhancv-link"><span>www.hicv.vn</span></div>-->
+        <!--<div class="powered-by">-->
+            <!--<span class="verified-by">Created by HICV</span>-->
+        <!--</div>-->
+    </div>
+</div>
+
+
+

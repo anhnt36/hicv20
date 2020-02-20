@@ -1,0 +1,98 @@
+<div id="EducationSection" class="resume-section EducationSection" change-height>
+	<div class="resume-section-container clickable editable" ng-click="$root.clickInputTitleSection($event)" click-off
+	     on-click-off="$root.clickOffInputTitleSection($event)">
+		<div class="resume-section-text-container">
+			<div class="editable-field-wrapper">
+				<textarea msd-elastic
+						  class="editable-field resume-first-border resume-section-text resume-heading-font resume-first-color"
+						  placeholder="{{'education' | translate}}"
+						  ng-model="$ctrl.data.name"
+						  autocomplete="off"
+						  rows="1"
+						  style="overflow: hidden; word-wrap: break-word; height: 39px;" capitalize-first>
+				</textarea>
+			</div>
+		</div>
+	</div>
+	<div dnd-list="$ctrl.data.items"
+		 dnd-allowed-types="[$ctrl.data.key]"
+	     dnd-external-sources="true"
+	     dnd-dragover="$ctrl.dragoverCallback(event, index, external, type)"
+	     dnd-drop="$ctrl.dropCallback(event, index, item, external, type)" class="resume-section">
+		<div class="dndPlaceholder" ng-style="$ctrl.styleDndPlaceholder"></div>
+		<div ng-repeat="item in $ctrl.data.items"
+			 dnd-type="item.key"
+			 dnd-effect-allowed="copyMove"
+			 dnd-moved="$ctrl.data.items.splice($index, 1)"
+			 dnd-draggable="$ctrl.getSelectedItemsIncluding($ctrl.data, item)"
+			 dnd-dragstart="$ctrl.onDragstart($ctrl.data, event)"
+			 dnd-dragend="$ctrl.data.dragging = false"
+			 dnd-selected="item.selected = !item.selected"
+			 ng-hide="$ctrl.data.dragging && item.selected">
+			<div class="resume-item-holder line-item clickable editable" id="sections-3-items-0" draggable="false"
+			     ng-click="$ctrl.clickSection($event, $index)" click-off
+			     on-click-off="$ctrl.clickSectionOff($event, $index)">
+				<div ng-show="$ctrl.displayPopover[$index]">
+					<template-popover  date-period="item.datePeriod"
+					                  field-check="$ctrl.fieldCheck"
+					                  data="item" template-data="$ctrl.data" icon-add="true" icon-time="true"
+					                  icon-cog="true" icon-trash="true" key="$index"></template-popover>
+				</div>
+
+
+				<div class="item-object education-item">
+					<div class="inner">
+						<div class="education-item-not-gpa">
+							<div class="editable-field-wrapper" ng-if="item.field.display">
+								<textarea msd-elastic
+										  class="editable-field item-degree resume-first-color resume-heading-font"
+										  placeholder="{{'degreeOrFieldStudy' | translate}}"
+										  ng-model="item.field.value"
+										  autocomplete="off"
+										  rows="1"
+										  style="overflow: hidden; word-wrap: break-word; height: 25px;" capitalize-first>
+								</textarea>
+							</div>
+							<div class="editable-field-wrapper" ng-if="item.school.display">
+								<textarea msd-elastic
+										  class="editable-field item-institution resume-second-color"
+										  placeholder="{{'schoolOrUniversity' | translate}}"
+										  ng-model="item.school.value"
+										  autocomplete="off"
+										  rows="1"
+										  style="overflow: hidden; word-wrap: break-word; height: 20px;" capitalize-first>
+								</textarea>
+							</div>
+							<div class="with-icon-container top-xty">
+								<a href="" role="button" class="btn btn-sm btn-resume-data btn-link with-icon" click-datetime>
+									<i class="icon icon-40-free-calendar"></i>
+									<span ng-if="!item.datePeriod.monthFrom && !item.datePeriod.yearFrom && !item.datePeriod.monthTo && !item.datePeriod.yearTo" ng-click="$root.changeDate($event)">{{'datetime' | translate}}</span>
+									<span ng-if="item.datePeriod.monthFrom" ng-bind="item.datePeriod.monthFrom | translate"></span>&nbsp;
+									<span ng-if="item.datePeriod.yearFrom" ng-bind="'/' + item.datePeriod.yearFrom"></span>&nbsp;
+									<span ng-if="item.datePeriod.monthFrom || item.datePeriod.yearFrom || item.datePeriod.monthTo || item.datePeriod.yearTo">-</span>&nbsp;
+									<span ng-if="item.datePeriod.monthTo && !item.datePeriod.onGoing" ng-bind="item.datePeriod.monthTo | translate"></span>&nbsp;
+									<span ng-if="item.datePeriod.yearTo && !item.datePeriod.onGoing" ng-bind="'/' + item.datePeriod.yearTo"></span>
+									<span ng-if="(item.datePeriod.monthFrom || item.datePeriod.yearFrom || item.datePeriod.monthTo || item.datePeriod.yearTo) && item.datePeriod.onGoing == true">{{'ongoing' | translate}}</span>
+
+								</a>
+								</a>
+							</div>
+						</div>
+						<div class="education-item-gpa-container" ng-if="item.GPA.display">
+							<div class="education-item-gpa">
+								<h4 class="education-item-gpa-title">{{'gpa' | translate}}</h4>
+								<div>
+									<input maxlength="4" class="editable-field bold resume-second-color"
+									       placeholder="0.00" autocomplete="off" ng-blur="$ctrl.formatGPA($index)" ng-model="item.GPA.rate">
+									<span class="separator"> / </span>
+									<input maxlength="4" class="editable-field"
+									       placeholder="0.00"
+									       autocomplete="off" ng-model="item.GPA.total"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

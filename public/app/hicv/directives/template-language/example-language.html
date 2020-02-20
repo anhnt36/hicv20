@@ -1,0 +1,45 @@
+<div id="LanguageSection" class="resume-section LanguageSection" >
+<div class="resume-section-container clickable editable">
+		<div class="resume-section-text-container">
+			<div class="editable-field-wrapper">
+				<textarea msd-elastic
+						  class="editable-field resume-first-border resume-section-text resume-heading-font resume-first-color"
+						  placeholder="{{'language' | translate}}"
+						  ng-model="$ctrl.data.name"
+						  autocomplete="off"
+						  rows="1"
+						  style="overflow: hidden; word-wrap: break-word; height: 39px;">
+				</textarea>
+			</div>
+		</div>
+	</div>
+	<div class="resume-section">
+		<div ng-repeat="item in $ctrl.data.items"
+		     class="resume-item-holder line-item editable clickable" id="sections-2-items-0">
+			<div>
+				<div class="item-object language-item ">
+					<div class="inner">
+						<div class="language-item-content">
+							<div class="editable-field-wrapper">
+								<textarea msd-elastic
+										  class="editable-field language-item-name resume-first-color"
+										  placeholder="{{'language' | translate}}"
+										  ng-model="item.language"
+										  autocomplete="off"
+										  rows="1"
+										  style="overflow: hidden; word-wrap: break-word; height: 20px;">
+								</textarea>
+							</div>
+							<div class="language-item-level-text" ng-bind-html="item.proficiency.value"
+							     ng-if="item.proficiency.display">
+							</div>
+						</div>
+						<div class="language-item-slider lower-lines" ng-if="item.level.display">
+							<range-slider type="dot" data="item.level" experience="item.proficiency"></range-slider>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,25 @@
+<div class="modal modal-rearrange-edit" style="display: block;">
+    <div id="" class="modal-dialog modal-sx layout-popup">
+        <div class="modal-content">
+            <div>
+                <div class="modal-header" style="padding: 20px 40px 0px 40px;">
+                    <button class="close animated-hover" type="button" ng-click="$close()"><i class="icon icon-close-1 rotate"></i></button>
+                    <h2 class="modal-title" style="font-weight: 800">EXAMPLE</h2>
+                </div>
+                <hr />
+                <div class="modal-body" style="padding: 35px 20px !important;">
+                    <i ng-click="indexSlide = indexSlide == 0 ? indexSlide : indexSlide - 1" ng-disable="indexSlide == 0" class="fa fa-angle-left" style="float: left; margin-top: 10%;font-weight: 400;font-size: 20px;" aria-hidden="true"></i>
+                    <div style="width: 537px; display: inline-block">
+                        <div class="resume-page-wrapper">
+                            <div>
+                                <hoc-directive type="slides[indexSlide].template" data="slides[indexSlide].data" is-example="true"></hoc-directive>
+                            </div>
+                        </div>
+
+                    </div>
+                    <i ng-click="indexSlide = indexSlide + 1 == maxSlide ? indexSlide : indexSlide + 1" ng-disable="indexSlide == maxSlide" class="fa fa-angle-right" style="float: right; margin-top: 10%;font-weight: 400;font-size: 20px;" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

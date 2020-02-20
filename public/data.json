@@ -1,0 +1,184 @@
+{
+  "data": {
+    "achievements": {
+      "id": "AchievementSection",
+      "template": "template-achievements",
+      "key": "achievements",
+      "position": "right",
+      "height": "220",
+      "title": "Achievements",
+      "icon": "icon-23-free-star-two",
+      "priority": "2",
+      "items": [
+        {
+          "priority": "0",
+          "question": {
+            "value": "",
+            "display": "true"
+          },
+          "answer": {
+            "value": "",
+            "display": "true"
+          },
+          "icon": {
+            "value": "",
+            "display": "true"
+          }
+        },
+        {
+          "priority": "0",
+          "question": {
+            "value": "",
+            "display": "true"
+          },
+          "answer": {
+            "value": "",
+            "display": "true"
+          },
+          "icon": {
+            "value": "",
+            "display": "true"
+          }
+        }
+      ]
+    },
+    "education": {
+      "id": "EducationSection",
+      "height": "270",
+      "key": "education",
+      "template": "template-education",
+      "position": "left",
+      "title": "Education",
+      "icon": "icon-81-free-graduation-cap",
+      "priority": "1",
+      "items": [
+        {
+          "priority": "0",
+          "field": {
+            "value": "",
+            "display": "true"
+          },
+          "school": {
+            "value": "",
+            "display": "true"
+          },
+          "datePeriod": {
+            "monthFrom": "",
+            "yearFrom": "",
+            "monthTo": "",
+            "yearTo": "",
+            "onGoing": "true",
+            "display": "true"
+          },
+          "GPA": {
+            "total": "10",
+            "rate": "10",
+            "display": "true"
+          }
+        }
+      ]
+    },
+    "experience": {
+      "id": "ExperienceSection",
+      "key": "experience",
+      "height": "213",
+      "position": "left",
+      "template": "template-experience",
+      "title": "Experience",
+      "icon": "icon-enhancv-02-fat",
+      "priority": "2",
+      "items": [
+        {
+          "priority": "0",
+          "name": "",
+          "company": {
+            "value": "",
+            "display": "true"
+          },
+          "link": {
+            "value": "",
+            "display": "true"
+          },
+          "datePeriod": {},
+          "location": {
+            "value": "",
+            "display": "true"
+          },
+          "shortSummary": {
+            "value": "",
+            "display": "true"
+          },
+          "example": {
+            "display": "true",
+            "data": [
+            ]
+          }
+        }
+      ]
+    },
+    "info": {
+      "template": "template-person-info",
+      "position": "head",
+      "key": "info",
+      "title": "Person Infomation",
+      "icon": "icon-user",
+      "priority": "1",
+      "name": {
+        "value": ""
+      },
+      "say": {
+        "value": "",
+        "display": "true"
+      },
+      "phone": {
+        "value": "",
+        "display": "true"
+      },
+      "email": {
+        "value": "",
+        "display": "true"
+      },
+      "link": {
+        "value": "",
+        "display": "true"
+      },
+      "location": {
+        "value": "",
+        "display": "true"
+      },
+      "image": {
+        "link": "",
+        "style": "0",
+        "display": "true"
+      }
+    },
+    "languages": {
+      "id": "LanguageSection",
+      "template": "template-language",
+      "key": "languages",
+      "height": "218",
+      "position": "right",
+      "title": "Language",
+      "icon": "fa fa-language",
+      "priority": "1",
+      "items": [
+      ]
+    },
+    "project": {
+      "id": "ActivitySection",
+      "template": "template-project",
+      "key": "project",
+      "height": "211",
+      "position": "right",
+      "icon": "icon-61-free-project-01",
+      "title": "Project",
+      "priority": "3",
+      "items": []
+    }
+  },
+  "layout": "double",
+  "font": "lato",
+  "color": "blue",
+  "background": "default",
+  "numberPage": 0
+}

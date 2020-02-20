@@ -1,0 +1,35 @@
+<div id="SummarySection-0" class="resume-section SummarySection" change-height>
+    <div class="resume-section-container resume-section-selected clickable editable" ng-click="$root.clickInputTitleSection($event)" click-off
+         on-click-off="$root.clickOffInputTitleSection($event)">
+        <div class="resume-section-text-container">
+            <div class="editable-field-wrapper">
+                <textarea
+                        msd-elastic
+                        class="editable-field resume-first-border resume-section-text resume-heading-font resume-first-color"
+                        placeholder="{{'summary' | translate}}" autocomplete="off" rows="1"
+                        style="overflow: hidden; word-wrap: break-word; height: 39px;"
+                        ng-model="$ctrl.data.name" capitalize-first>
+                </textarea>
+            </div>
+        </div>
+    </div>
+    <div class="">
+        <div class="resume-item-holder line-item clickable editable" id="sections-6-items-0" ng-click="$ctrl.clickSection($event, $index)" click-off
+             on-click-off="$ctrl.clickSectionOff($event, $index)">
+            <div class="item-object summary-item">
+                <div class="inner">
+                    <div class="editable-field-wrapper">
+                        <textarea
+                                msd-elastic
+                                maxlength="3700" class="editable-field"
+                                placeholder="{{'summaryDescription' | translate}}"
+                                data-allow-new-line="true" autocomplete="off" rows="1"
+                                style="overflow: hidden; word-wrap: break-word; height: 40px;"
+                                ng-model="$ctrl.data.value" capitalize-first>
+                        </textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

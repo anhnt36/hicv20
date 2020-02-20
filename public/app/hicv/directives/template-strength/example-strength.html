@@ -1,0 +1,44 @@
+<div id="TalentSection-0" class="resume-section TalentSection" >
+    <div class="resume-section-container resume-section-selected clickable editable">
+        <div class="resume-section-text-container">
+            <div class="editable-field-wrapper"><textarea
+                    msd-elastic ng-model="$ctrl.data.name"
+                    class="editable-field resume-first-border resume-section-text resume-heading-font resume-first-color"
+                    placeholder="{{'strength' | translate}}" autocomplete="off" rows="1"
+                    style="overflow: hidden; word-wrap: break-word; height: 39px;" capitalize-first>
+                </textarea>
+            </div>
+        </div>
+    </div>
+    <div class="moveable-items">
+        <div ng-repeat="item in $ctrl.data.items"
+             class="resume-item-holder line-item editable clickable"
+             id="sections-7-items-0">
+            <div class="item-object talent-item">
+                <div class="inner">
+                    <div class="talent-item-content">
+                        <div class="talent-item-icon editable">
+                            <div class=""><i class="{{item.icon.value}}  resume-second-color"></i></div>
+                        </div>
+                        <div class="editable-field-wrapper"><textarea
+                                msd-elastic ng-model="item.name"
+                                class="editable-field passion-item-title resume-first-color "
+                                placeholder="{{'yourUniqueTalent' | translate}}" autocomplete="off" rows="1"
+                                style="overflow: hidden; word-wrap: break-word; height: 20px;" capitalize-first>
+                                    </textarea></div>
+                    </div>
+                    <div class="padded-item-content">
+                        <div class="editable-field-wrapper">
+                            <textarea
+                                    msd-elastic ng-model="item.description.value"
+                                    class="editable-field passion-item-description"
+                                    placeholder="{{'yourUniqueTalentDescription' | translate}}"
+                                    maxlength="1000" autocomplete="off" rows="1"
+                                    style="overflow: hidden; word-wrap: break-word; height: 22px;" capitalize-first></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
