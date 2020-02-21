@@ -1,6 +1,8 @@
 <div id="SummarySection-0" class="resume-section SummarySection" change-height>
-    <div class="resume-section-container resume-section-selected clickable editable" ng-click="$root.clickInputTitleSection($event)" click-off
-         on-click-off="$root.clickOffInputTitleSection($event)">
+    <div class="resume-section-container resume-section-selected clickable editable" ng-click="$ctrl.clickSectionTitle($event)" click-off
+         on-click-off="$ctrl.clickOffInputTitleSection($event)">
+        <template-popover ng-if="$ctrl.displayPopoverTitle" field-check="$ctrl.fieldCheck" data="item"
+                          template-data="$ctrl.data" delete-section="true" icon-trash="true" key="$index"></template-popover>
         <div class="resume-section-text-container">
             <div class="editable-field-wrapper">
                 <textarea

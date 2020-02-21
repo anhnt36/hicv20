@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="{{ URL::asset('bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/main.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/style1.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('bower_components/font-awesome/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/font-awesome-4.7.0/css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('bower_components/angular-bootstrap/ui-bootstrap-csp.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('bower_components/angularjs-slider/dist/rzslider.min.css') }}">
 </head>

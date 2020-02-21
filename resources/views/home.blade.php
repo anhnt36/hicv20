@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ asset('/asset/home/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="/asset/home/css/style.css">
-    <link rel="stylesheet" type="text/css" href="/asset/home/css/circle.css" />
-    <link rel="stylesheet" type="text/css" href="/asset/home/css/template.css" />
+    <link rel="stylesheet" href="{{ asset('/asset/home/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('/asset/home/css/circle.css') }}">
+    <link rel="stylesheet" href="{{ asset('/asset/home/css/template.css') }}">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script type="text/javascript" src="/asset/home/js/jquery.min.js"></script>
-    <script type="text/javascript" src="/asset/home/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/asset/home/js/template.js"></script>
+    <script type="text/javascript" src="{{ asset('/asset/home/js/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('/asset/home/js/bootstrap.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('/asset/home/js/template.js') }}"></script>
 </head>
 <body>
 <!-- Begin wrapper header -->

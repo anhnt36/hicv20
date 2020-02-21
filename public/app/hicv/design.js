@@ -51,6 +51,6 @@
         $httpProvider.interceptors.push('APIInterceptor');
         socialProvider.setGoogleKey("497149117926-ek6lt71agkb06kljdg5o4h8lrm5jcs81.apps.googleusercontent.com");
         socialProvider.setLinkedInKey("81djn09w6shn2w");
-        socialProvider.setFbKey({appId: "1827980554141925", apiVersion: "v2.8"});
+        socialProvider.setFbKey({appId: "164542197402348", apiVersion: "v2.12"});
     }
 })();

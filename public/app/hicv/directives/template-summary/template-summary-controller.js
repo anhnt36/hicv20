@@ -9,6 +9,7 @@ function TemplateSummaryController($scope, $rootScope, DesignService) {
     var $ctrl = this;
     $ctrl.fieldCheck = ['level'];
     $ctrl.displayPopover = [];
+    $ctrl.displayPopoverTitle = false;
     $ctrl.visit = '';
     $ctrl.designScope = $scope.$parent.$parent.$parent.$parent;
     init();
@@ -30,6 +31,19 @@ function TemplateSummaryController($scope, $rootScope, DesignService) {
         $rootScope.clickOffInputItemSection($event);
         $ctrl.displayPopover[$index] = false;
     };
+
+    $ctrl.clickSectionTitle = function clickSection($event, $index) {
+        $rootScope.$broadcast('reset-popover');
+        resetClickPopover();
+        $rootScope.clickInputTitleSection($event);
+        $ctrl.displayPopoverTitle = true;
+    };
+    $ctrl.clickSectionTitleOff = function clickSectionOff($event, $index) {
+        $rootScope.clickOffInputTitleSection($event);
+        $ctrl.displayPopoverTitle = false;
+    };
+
+
 
     function resetClickPopover() {
         _.each($ctrl.displayPopover, function(item, $index) {
