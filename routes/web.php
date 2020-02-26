@@ -15,6 +15,7 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/cv', 'HomeController@createCV')->name('create-cv');
+Route::get('/list-cv', 'CvController@listCV')->name('list-cv');
 
 Route::any('/api/exportPdf/{id}', 'PdfApiController@convert_pdf');
 Route::any('/api/cv', 'CvApiController@create');

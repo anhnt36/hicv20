@@ -27,4 +27,19 @@ class CvController extends Controller
 
         return response()->view($view, ['isLoggedIn' => $this->isLoggedIn, 'user' => $this->user, 'myCvs' => $myCvs]);
     }
+
+    public function listCV()
+    {
+        $this->checkLogin();
+        if(!$this->isLoggedIn) {
+            return response()->redirectTo($this->redirectTo);
+        }
+
+        $myCvs = Resume::where('seeker_id', $this->user->id)->get();
+        $view = count($myCvs) ? 'cv.listcv' : 'cv.mycv_empty';
+
+        return response()->view($view, ['isLoggedIn' => $this->isLoggedIn, 'user' => $this->user, 'myCvs' => $myCvs]);
+    }
+
+
 }

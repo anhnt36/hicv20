@@ -12,34 +12,34 @@
                     <h2>Đăng ký với</h2>
                     {{Form::open(['method' => 'post'])}}
                         {{ csrf_field() }}
-                        <div class="social-register">
-                            <div class="social-register-inner">
-                                <div class="col-xs-4 col-sm-4 col-lg-4">
-                                    <div class="social-fb">
-                                        <a href="{{ url('/dang-nhap-tai-khoan-facebook.html') }}" title="Đăng nhập bằng Facebook">
-                                            <img src="images/icon-tkfb.png" height="46" width="47">
-                                            <div><span>Facebook</span></div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-xs-4 col-sm-4 col-lg-4">
-                                    <div class="social-ln">
-                                        <a href="{{ url('/dang-nhap-tai-khoan-linkedin.html') }}" title="Đăng nhập bằng Linkedin">
-                                            <img src="images/icon-ln.png" height="46" width="47">
-                                            <div><span>Linkedin</span></div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-xs-4 col-sm-4 col-lg-4">
-                                    <div class="social-gg">
-                                        <a href="{{ url('/dang-nhap-tai-khoan-google.html') }}" title="Đăng nhập bằng Google">
-                                            <img src="images/icon-tkgg.png" height="47" width="47">
-                                            <div><span>Google +</span></div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+<!--                        <div class="social-register">-->
+<!--                            <div class="social-register-inner">-->
+<!--                                <div class="col-xs-4 col-sm-4 col-lg-4">-->
+<!--                                    <div class="social-fb">-->
+<!--                                        <a href="{{ url('/dang-nhap-tai-khoan-facebook.html') }}" title="Đăng nhập bằng Facebook">-->
+<!--                                            <img src="images/icon-tkfb.png" height="46" width="47">-->
+<!--                                            <div><span>Facebook</span></div>-->
+<!--                                        </a>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="col-xs-4 col-sm-4 col-lg-4">-->
+<!--                                    <div class="social-ln">-->
+<!--                                        <a href="{{ url('/dang-nhap-tai-khoan-linkedin.html') }}" title="Đăng nhập bằng Linkedin">-->
+<!--                                            <img src="images/icon-ln.png" height="46" width="47">-->
+<!--                                            <div><span>Linkedin</span></div>-->
+<!--                                        </a>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="col-xs-4 col-sm-4 col-lg-4">-->
+<!--                                    <div class="social-gg">-->
+<!--                                        <a href="{{ url('/dang-nhap-tai-khoan-google.html') }}" title="Đăng nhập bằng Google">-->
+<!--                                            <img src="images/icon-tkgg.png" height="47" width="47">-->
+<!--                                            <div><span>Google +</span></div>-->
+<!--                                        </a>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
                         <div class="clearfix"></div>
                         <hr>
                         <div class="lead">Hoặc tạo tài khoản</div>

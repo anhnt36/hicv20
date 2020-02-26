@@ -101,9 +101,6 @@
                 education: new TemplateEducationModel,
                 experience: new TemplateExperienceModel,
                 info: new PersonalInfor,
-                languages: new TemplateLanguageModel,
-                project: new TemplateProjectModel,
-                skill: new TemplateSkillModel,
                 summary: new TemplateSummaryModel,
                 passion: new TemplatePassionModel,
                 strength: new TemplateStrengthModel

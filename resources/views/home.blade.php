@@ -40,8 +40,7 @@
                                         </a>
                                         <ul class="dropdown-menu menu-cv-left">
                                             <li><a href="{{ URL::route('home') }}" title="Home">Trang chủ</a></li>
-                                            <li><a href="{{ URL::route('create-cv') }}" title="Create CV">Tạo CV</a></li>
-                                            <li><a href="http://blog.hicv.vn" title="Our Blog">Blog</a></li>
+                                            <li><a href="{{ url('/cv#/edit') }}/" title="Create CV">Tạo CV</a></li>
                                         </ul>
                                     </div>
                                 </li>
@@ -84,6 +83,7 @@
                                         <ul class="dropdown-menu">
                                             @if (Auth::check())
                                                 <li><a href="{{ URL::route('myCv') }}"><i class="fa fa-user" aria-hidden="true"></i> Tài khoản</a></li>
+                                                <li><a href="{{ URL::route('list-cv') }}"><i class="fa fa-list" aria-hidden="true"></i> Danh sách CV</a></li>
                                                 <li><a href="{{ URL::route('logout') }}"><i class="fa fa-sign-out" aria-hidden="true"></i> Đăng xuất</a></li>
                                             @else
                                                 <li><a href="{{ URL::route('register') }}"><i class="fa fa-user" aria-hidden="true"></i> Đăng ký</a></li>
@@ -123,6 +123,7 @@
                                         <ul class="dropdown-menu">
                                             @if (Auth::check())
                                                 <li><a href="{{ URL::route('myCv') }}"><i class="fa fa-user" aria-hidden="true"></i> Tài khoản</a></li>
+                                                <li><a href="{{ URL::route('list-cv') }}"><i class="fa fa-user" aria-hidden="true"></i> Danh sách CV</a></li>
                                                 <li><a href="{{ URL::route('logout') }}"><i class="fa fa-sign-out" aria-hidden="true"></i> Đăng xuất</a></li>
                                             @else
                                                 <li><a href="{{ URL::route('register') }}"><i class="fa fa-user" aria-hidden="true"></i> Đăng ký</a></li>

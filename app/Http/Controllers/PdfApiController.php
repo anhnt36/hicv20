@@ -219,8 +219,9 @@ class PdfApiController extends Api
                     body, html {
                         width: 940px;
                         overflow-x: hidden;
-                        background-color: none;
-                        font-weight: 400;
+                        background: border-box;
+                        display: table !important;
+                        font-weight: 600;
                     }
                     .with-icon-container {
                             float: left;

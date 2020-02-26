@@ -4,7 +4,7 @@
     angular
         .module('hicv')
         .constant('CONFIG', {
-            API : 'http://local.hicv.vn',
+            API : 'http://localhost',
             HEIGHT_PAGE : 1209
         });
 })();
