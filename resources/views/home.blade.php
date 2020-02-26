@@ -49,7 +49,7 @@
                         <div class="col-xs-6 col-sm-4 col-lg-4 text-center">
                             <ul class="logo-hi">
                                 <li>
-                                   <a href="#" title="logo"><img src="/asset/home/images/logo-hi.png" alt=""></a> 
+                                   <a href="#" title="logo"><img src="{{ asset('/asset/home/images/logo-hi.png') }}" alt=""></a>
                                 </li>
                             </ul>
                         </div>
@@ -105,7 +105,7 @@
                         <div class="navigation-menu-logo text-center">
                             <ul class="logo-hi">
                                 <li>
-                                   <a href="#" title="logo"><img src="/asset/home/images/logo-hi.png" alt=""></a> 
+                                   <a href="#" title="logo"><img src="{{ asset('/asset/home/images/logo-hi.png') }}" alt=""></a>
                                 </li>
                             </ul>
                         </div>
@@ -168,7 +168,7 @@
             <div id="myCarousel2" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner" role="listbox">
                     <div class="item active">
-                        <a href="#" title="featured"><img src="/asset/home/images/home1.jpg" alt=""></a>
+                        <a href="#" title="featured"><img src="{{ asset('/asset/home/images/home1.jpg') }}" alt=""></a>
                         <a href="#" title="Bạn muốn có một CV ấn tượng" class="content-slide white-color">Bạn muốn có một CV ấn tượng</a>
                         <div class="explore-now">
                             <a href="{{url('/cv#/edit')}}/" class="explore-now-link">
@@ -192,7 +192,7 @@
                     <div class="customizable-cv-left-inner">
                         <div class="customizable-cv-left-inner-cm">
                             <div class="title-customizable-cv">
-                                <img src="/asset/home/images/icon-9.png" alt="">
+                                <img src="{{ asset('/asset/home/images/icon-9.png') }}" alt="">
                                 <span>Tương tác trực quan</span>
                             </div>
                             <div class="customizable-cv-left-body">
@@ -201,7 +201,7 @@
                         </div>
                         <div class="customizable-cv-left-inner-cm">
                             <div class="title-customizable-cv">
-                                <img src="/asset/home/images/icon-10.png" alt="">
+                                <img src="{{ asset('/asset/home/images/icon-10.png') }}" alt="">
                                 <span>Tùy biến theo đối tượng</span>
                             </div>
                             <div class="customizable-cv-left-body">
@@ -210,7 +210,7 @@
                         </div>
                         <div class="customizable-cv-left-inner-cm">
                             <div class="title-customizable-cv">
-                                <img src="/asset/home/images/icon-11.png" alt="">
+                                <img src="{{ asset('/asset/home/images/icon-11.png') }}" alt="">
                                 <span>Nổi bật điểm mạnh cá nhân</span>
                             </div>
                             <div class="customizable-cv-left-body">
@@ -219,7 +219,7 @@
                         </div>
                         <div class="customizable-cv-left-inner-cm">
                             <div class="title-customizable-cv">
-                                <img src="/asset/home/images/icon-12.png" alt="">
+                                <img src="{{ asset('/asset/home/images/icon-12.png') }}" alt="">
                                 <span>Xuất file PDF dễ dàng</span>
                             </div>
                             <div class="customizable-cv-left-body">
@@ -272,7 +272,7 @@
 	<div class="container-inner">
 		<div class="footer-top clearfix text-center">
 			<div class="footer-icon-video">
-                <a href="#"><img src="/asset/home/images/play-video.png"></a>
+                <a href="#"><img src="{{ asset('/asset/home/images/play-video.png') }}"></a>
             </div>
             <div class="footer-top-body">
                 <span class="cltxt-body">Hãy để CV thể hiện sự chuyên nghiệp và phong cách của bạn</span>

@@ -9,12 +9,12 @@
 	    <title>@yield('title') - HiCV</title>
 
 	   <!-- CSS -->
-	    <link rel="stylesheet" href="/asset/default/css/bootstrap.min.css" >
-	    <link rel="stylesheet" href="/asset/default/css/font-awesome.min.css">
-		<link rel="stylesheet" href="/asset/default/css/icofont.css"> 
-	    <link rel="stylesheet" href="/asset/default/css/slidr.css">     
-	    <link rel="stylesheet" href="/asset/default/css/main.css">
-	    <link rel="stylesheet" href="/asset/default/css/responsive.css">
+	    <link rel="stylesheet" href="{{ asset('/asset/default/css/bootstrap.min.css') }}" >
+	    <link rel="stylesheet" href="{{ asset('/asset/default/css/font-awesome.min.css') }}">
+		<link rel="stylesheet" href="{{ asset('/asset/default/css/icofont.css') }}">
+	    <link rel="stylesheet" href="{{ asset('/asset/default/css/slidr.css') }}">
+	    <link rel="stylesheet" href="{{ asset('/asset/default/css/main.css') }}">
+	    <link rel="stylesheet" href="{{ asset('/asset/default/css/responsive.css') }}">
 		
 		<!-- font -->
 		<link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700,300' rel='stylesheet' type='text/css'>
@@ -48,10 +48,10 @@
 		<!-- footer -->
 		
 	    <!-- JS -->
-	    <script src="/asset/default/js/jquery.min.js"></script>
-	    <script src="/asset/default/js/bootstrap.min.js"></script>
-	    <script src="/asset/default/js/price-range.js"></script>   
-	    <script src="/asset/default/js/main.js"></script>
-		<script src="/asset/default/js/switcher.js"></script>
+	    <script src="{{ asset('/asset/default/js/jquery.min.js') }}"></script>
+	    <script src="{{ asset('/asset/default/js/bootstrap.min.js') }}"></script>
+	    <script src="{{ asset('/asset/default/js/price-range.js') }}"></script>
+	    <script src="{{ asset('/asset/default/js/main.js') }}"></script>
+		<script src="{{ asset('/asset/default/js/switcher.js') }}"></script>
 	</body>
 </html>
